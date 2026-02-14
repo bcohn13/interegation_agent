@@ -1,6 +1,7 @@
 import json
 from config import client, MODEL
 from models import StrategicOutput
+import re
 
 SYSTEM_PROMPT = """
 You are a senior strategic advisor to a CEO who does not have time to read long answers.
@@ -40,10 +41,9 @@ def run_strategic_skill(conversation):
 
     content = response.choices[0].message.content
 
-    try:
-        parsed = json.loads(content)
-    except:
-        parsed={"content": content}
-    
+    # TODO: find permanent solution for returning valid json in every response
+    cleaned = re.sub(r'^```(?:json)?\s*|\s*```$', '', content.strip(), flags=re.MULTILINE)
+
+    parsed = json.loads(cleaned)
 
     return StrategicOutput(**parsed)
