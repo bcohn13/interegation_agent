@@ -1,5 +1,6 @@
 from config import MAX_ITERATIONS, CONFIDENCE_THRESHOLD
 from skills.strategic import run_strategic_skill
+import sys
 
 class StrategicAgent:
 
@@ -33,9 +34,11 @@ class StrategicAgent:
         self.iteration_count += 1
 
         if result.mode == "final_answer":
+            print(f"Result 1: {result}")
             return result
 
         if result.confidence >= CONFIDENCE_THRESHOLD:
+            print(f"Result 2: {result}")
             return result
 
         # Save the agent's question before returning it
@@ -44,4 +47,5 @@ class StrategicAgent:
             "content": result.content
         })
 
+        print(f"Result 3: {result}")
         return result

@@ -26,6 +26,7 @@ Always return valid JSON:
 """
 
 def run_strategic_skill(conversation):
+    #print(conversation)
     response = client.chat.completions.create(
         model=MODEL,
         temperature=0.3,
@@ -34,8 +35,15 @@ def run_strategic_skill(conversation):
             *conversation
         ],
     )
-
+    for choice in response.choices:
+        print(choice)
+    #print(response.choices.message)
     content = response.choices[0].message.content
-    parsed = json.loads(content)
+    #print(f"Content: {content}")
+    try:
+        parsed = json.loads(content)
+    except:
+        parsed={"content": content}
+    
 
     return StrategicOutput(**parsed)
