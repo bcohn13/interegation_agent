@@ -1,4 +1,4 @@
-from config import MAX_ITERATIONS, CONFIDENCE_THRESHOLD
+from config import MAX_ITERATIONS, CONFIDENCE_THRESHOLD, INITIAL_CONFIDENCE
 from skills.strategic import run_strategic_skill
 import sys
 
@@ -29,12 +29,16 @@ class StrategicAgent:
                 "content": "Maximum iterations reached. Providing best recommendation based on available information.",
                 "confidence": 0.7
             }
-
+        
         result = run_strategic_skill(self.conversation)
         self.iteration_count += 1
 
         if result.mode == "final_answer":
-            return result
+            return {
+                "mode": "final_answer",
+                "content": result.content,
+                "confidence": result.confidence
+            }
 
         if result.confidence >= CONFIDENCE_THRESHOLD:
             return {
@@ -46,7 +50,7 @@ class StrategicAgent:
         # Save the agent's question before returning it
         self.conversation.append({
             "role": "assistant",
-            "content": result.content
+            "content": result.content,
         })
 
         return result

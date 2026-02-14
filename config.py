@@ -6,4 +6,5 @@ client = OpenAI(api_key=os.getenv("Open_AI_Key"))
 
 MODEL = "gpt-4o"
 MAX_ITERATIONS = 6
-CONFIDENCE_THRESHOLD = 0.8
+CONFIDENCE_THRESHOLD = 0.9
+INITIAL_CONFIDENCE = 0.7
