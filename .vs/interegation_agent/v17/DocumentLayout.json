@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:skills\\strategic.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bcohn\\source\\repos\\interegation_agent\\agent_runtime.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:agent_runtime.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bcohn\\source\\repos\\interegation_agent\\config.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:config.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bcohn\\source\\repos\\interegation_agent\\models.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:models.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bcohn\\source\\repos\\interegation_agent\\agent_runtime.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:agent_runtime.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bcohn\\source\\repos\\interegation_agent\\skills\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "skills\\strategic.py",
               "ToolTip": "C:\\Users\\bcohn\\source\\repos\\interegation_agent\\skills\\strategic.py",
               "RelativeToolTip": "skills\\strategic.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2026-02-14T15:59:59.604Z",
               "EditorCaption": ""
@@ -59,38 +59,37 @@
               "RelativeToolTip": "skills\\__init__.py",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-02-14T14:14:54.497Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-14T14:14:54.497Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "agent_runtime.py",
               "DocumentMoniker": "C:\\Users\\bcohn\\source\\repos\\interegation_agent\\agent_runtime.py",
               "RelativeDocumentMoniker": "agent_runtime.py",
               "ToolTip": "C:\\Users\\bcohn\\source\\repos\\interegation_agent\\agent_runtime.py",
               "RelativeToolTip": "agent_runtime.py",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA4AAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2026-02-14T14:14:42.001Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "config.py",
               "DocumentMoniker": "C:\\Users\\bcohn\\source\\repos\\interegation_agent\\config.py",
               "RelativeDocumentMoniker": "config.py",
               "ToolTip": "C:\\Users\\bcohn\\source\\repos\\interegation_agent\\config.py",
               "RelativeToolTip": "config.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2026-02-14T14:14:31.587Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "main.py",
               "DocumentMoniker": "C:\\Users\\bcohn\\source\\repos\\interegation_agent\\main.py",
               "RelativeDocumentMoniker": "main.py",
@@ -98,12 +97,11 @@
               "RelativeToolTip": "main.py",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-02-14T14:14:25.856Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-14T14:14:25.856Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "models.py",
               "DocumentMoniker": "C:\\Users\\bcohn\\source\\repos\\interegation_agent\\models.py",
               "RelativeDocumentMoniker": "models.py",
@@ -111,8 +109,7 @@
               "RelativeToolTip": "models.py",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-02-14T14:14:24.433Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-14T14:14:24.433Z"
             }
           ]
         }
