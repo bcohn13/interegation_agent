@@ -34,18 +34,19 @@ class StrategicAgent:
         self.iteration_count += 1
 
         if result.mode == "final_answer":
-            print(f"Result 1: {result}")
             return result
 
         if result.confidence >= CONFIDENCE_THRESHOLD:
-            print(f"Result 2: {result}")
-            return result
-
+            return {
+                "mode": "final_answer",
+                "content": result.content,
+                "confidence": result.confidence
+            }
+            
         # Save the agent's question before returning it
         self.conversation.append({
             "role": "assistant",
             "content": result.content
         })
 
-        print(f"Result 3: {result}")
         return result

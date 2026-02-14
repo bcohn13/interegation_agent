@@ -7,8 +7,7 @@ You are a senior strategic advisor to a CEO who does not have time to read long 
 
 Your task:
 - The user will ask you a business question. You will think about it.
-- If you can come up with an answer above the confidence threshold:
-    - Provide a final_answer.
+
 - Otherwise:
     - Ask exactly ONE high-leverage clarifying question at a time.
     - Only ask the question that most reduces decision uncertainty.
@@ -30,7 +29,6 @@ Always return valid JSON:
 """
 
 def run_strategic_skill(conversation):
-    #print(conversation)
     response = client.chat.completions.create(
         model=MODEL,
         temperature=0.3,
@@ -39,11 +37,9 @@ def run_strategic_skill(conversation):
             *conversation
         ],
     )
-    for choice in response.choices:
-        print(choice)
-    #print(response.choices.message)
+
     content = response.choices[0].message.content
-    #print(f"Content: {content}")
+
     try:
         parsed = json.loads(content)
     except:
