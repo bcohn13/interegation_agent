@@ -1,6 +1,6 @@
-from config import MAX_ITERATIONS, CONFIDENCE_THRESHOLD, INITIAL_CONFIDENCE
+from config import MAX_ITERATIONS, CONFIDENCE_THRESHOLD
 from skills.strategic import run_strategic_skill
-import sys
+from models import StrategicOutput
 
 class StrategicAgent:
 
@@ -8,44 +8,36 @@ class StrategicAgent:
         self.conversation = []
         self.iteration_count = 0
 
-    def start(self, initial_question: str):
+    def start(self, initial_question: str) -> StrategicOutput:
         self.conversation = [
             {"role": "user", "content": initial_question}
         ]
         self.iteration_count = 0
         return self._iterate()
 
-    def continue_session(self, user_answer: str):
+    def continue_session(self, user_answer: str) -> StrategicOutput:
         self.conversation.append({
             "role": "user",
             "content": user_answer
         })
         return self._iterate()
 
-    def _iterate(self):
+    def _iterate(self) -> StrategicOutput:
         if self.iteration_count >= MAX_ITERATIONS:
-            return {
-                "mode": "final_answer",
-                "content": "Maximum iterations reached. Providing best recommendation based on available information.",
-                "confidence": 0.7
-            }
+            return StrategicOutput(
+                mode="final_answer",
+                content="Maximum iterations reached. Providing best recommendation based on available information.",
+                confidence=0.7,
+            )
         
         result = run_strategic_skill(self.conversation)
         self.iteration_count += 1
 
         if result.mode == "final_answer":
-            return {
-                "mode": "final_answer",
-                "content": result.content,
-                "confidence": result.confidence
-            }
+            return result
 
         if result.confidence >= CONFIDENCE_THRESHOLD:
-            return {
-                "mode": "final_answer",
-                "content": result.content,
-                "confidence": result.confidence
-            }
+            return result
             
         # Save the agent's question before returning it
         self.conversation.append({
