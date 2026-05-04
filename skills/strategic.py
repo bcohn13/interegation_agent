@@ -1,11 +1,10 @@
 import json
-from config import client, MODEL, CONFIDENCE_THRESHOLD, RAG_ENABLED, RAG_TOP_K
+from config import client, MODEL, CONFIDENCE_THRESHOLD
 from models import StrategicOutput
 import re
 from typing import cast
 from openai import RateLimitError, AuthenticationError, APIConnectionError, APITimeoutError, OpenAIError
 from openai.types.chat import ChatCompletionMessageParam
-from rag import rag_store
 
 
 
@@ -73,35 +72,10 @@ def run_strategic_skill(conversation: list[dict[str, str]]) -> StrategicOutput:
     # except:
     #     confidence_score = INITIAL_CONFIDENCE
 
-    latest_user_input = ""
-    for message in reversed(conversation):
-      if message.get("role") == "user":
-        latest_user_input = message.get("content", "")
-        break
-
-    rag_context = ""
-    if RAG_ENABLED and latest_user_input:
-      retrieved_chunks = rag_store.retrieve(latest_user_input, top_k=RAG_TOP_K)
-      if retrieved_chunks:
-        context_lines = [
-          f"- [{chunk['source']}#{chunk['chunk_id']}] {chunk['text']}"
-          for chunk in retrieved_chunks
-        ]
-        rag_context = (
-          "Use the retrieved business context below only when it is relevant. "
-          "If it conflicts with user-provided facts, trust the user and ask one clarifying question.\n\n"
-          "Retrieved context:\n"
-          + "\n".join(context_lines)
-        )
-
-    effective_system_prompt = SYSTEM_PROMPT
-    if rag_context:
-      effective_system_prompt = f"{SYSTEM_PROMPT}\n\n{rag_context}"
-
     messages = cast(
         list[ChatCompletionMessageParam],
         [
-        {"role": "system", "content": effective_system_prompt},
+        {"role": "system", "content": SYSTEM_PROMPT},
             *conversation,
         ],
     )
@@ -149,3 +123,4 @@ def run_strategic_skill(conversation: list[dict[str, str]]) -> StrategicOutput:
 
 
     return StrategicOutput(**parsed)
+
